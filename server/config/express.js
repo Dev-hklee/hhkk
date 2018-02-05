@@ -1,8 +1,10 @@
 const META = require('../meta');
 const ENV = META.env;
 
+const util = require('../util/common');
 const express = require('express');
 const app = express();
+util.getApiRouter();
 
 app.get('/', function (req, res) {
     res.send('Hello World!');

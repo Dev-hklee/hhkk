@@ -1,10 +1,10 @@
-const  ENV = {
-    "port": 8080,
-    "userTypes": {
-        "userType1": 1,
-        "userType2": 2,
-        "userType3": 3,
-    },
-};
-
+const util = require('../../util/common');
+const  ENV = {};
+ENV.port = 8080;
+ENV.userTypes = util.createEnum({
+    "11": 1,
+    "22": 2,
+    "33": 3,
+    "44": 4,
+});
 module.exports = ENV;

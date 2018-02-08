@@ -32,11 +32,5 @@ let createEnum = (enumObject) => {
     return enumObject;
 };
 
-let getApiRouter = () => {
-    fs.readdirSync('../api');
-};
-getApiRouter();
-
 module.exports.mergeMeta = mergeMeta;
 module.exports.createEnum = createEnum;
-module.exports.getApiRouter = getApiRouter;

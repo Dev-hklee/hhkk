@@ -1,4 +1,4 @@
-const util = require('../../util/common');
+const util = require('../../utils/common');
 const  ENV = {};
 ENV.port = 8080;
 ENV.userTypes = util.createEnum({

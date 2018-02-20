@@ -1,12 +1,20 @@
 const META = require('./server/meta');
 const ENV = META.env;
 
-const app = require('./server/config/express');
+const passport = require('passport');
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
+const {app, sequelize} = require('./server/config');
+
+app.post('/login',  (req, res, next) => {
+    console.log(req.body);
+    next();
 });
 
-app.listen(ENV.port, function () {
+app.post('/login',  passport.authenticate('local', {
+    successRedirect : '/loginSuccess',
+    failureRedirect: '/loginFail'
+}));
+
+app.listen(ENV.port, () => {
     console.log('Example app listening on port ' + ENV.port + '!');
 });
